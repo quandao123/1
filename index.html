@@ -1,1 +1,48 @@
 <!DOCTYPE html>
+<html>
+<head>
+<style>
+/* 1. The container that holds the text */
+.ticker-wrap {
+  width: 100%;
+  overflow: hidden; /* Hides the text when it goes outside the box */
+  background-color: #333; /* Background color */
+  white-space: nowrap; /* Prevents text from breaking onto a new line */
+}
+
+/* 2. The actual text animation */
+.ticker-text {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+  /* This applies the animation named 'scroll' */
+  /* 15s = 15 seconds to go across. Change this to make it faster/slower */
+  /* linear = keeps the speed constant (smooth) rather than speeding up/slowing down */
+  animation: scroll 15s linear infinite; 
+}
+
+/* 3. Defining the movement */
+@keyframes scroll {
+  from {
+    transform: translateX(100%); /* Start off-screen to the right */
+  }
+  to {
+    transform: translateX(-100%); /* End off-screen to the left */
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap">
+  <div class="ticker-text">
+    🔥 BREAKING NEWS: This headline is running smoothly using modern CSS animations! No lag, just smooth sailing.
+  </div>
+</div>
+
+</body>
+</html>
